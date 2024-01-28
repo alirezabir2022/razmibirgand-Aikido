@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نمایش زمان و تاریخ مراسم</title>
+<style>
+  body {
+	  
+    font-family: 'Vazir';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Vazir'), url('../../../Users/hafez-store/Desktop/fonts/Vazir-Regular.woff2') format('woff2'), url('../../../Users/hafez-store/Desktop/fonts/Vazir-Regular.ttf') format('truetype');
+font-family: 'Vazir', sans-serif;
+  direction: rtl;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f7f7f7;
+    direction: rtl;
+    text-align: center;
+	  
+	  
+  }
+
+  .event-info {
+  padding: 20px;
+  border-radius: 10px;
+ background-color: #FBF7F7;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 10px 20px rgba(0, 0, 0, 0.7);
+  }
+
+  .event-date {
+    font-size: 2em;
+    color: #333;
+  }
+
+  .event-time {
+    font-size: 1.5em;
+    color: #555;
+  }
+</style>
+</head>
+<body>
+<div class="event-info">
+	<li>بیرجند
+	<p>
+		سالن ذولفقار
+		 خیابان مدرس 
+	</p>
+		
+	</li>
+  <div id="date" class="event-date"></div>
+  <div id="time" class="event-time"></div>
+</div>
+
+<script>
+  // تعریف تاریخ و ساعت مراسم
+  const eventDate = new Date();
+  eventDate.setDate(eventDate.getDate() + 5); // تاریخ دو روز بعد از امروز
+  eventDate.setHours(10, 0, 0); // ساعت 10 صبح
+
+  // نمایش تاریخ
+  const optionsDate = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
+  document.getElementById('date').textContent = eventDate.toLocaleDateString('fa-IR', optionsDate);
+
+  // نمایش ساعت
+  const optionsTime = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
+  document.getElementById('time').textContent = eventDate.toLocaleTimeString('fa-IR', optionsTime);
+	
+	
+</script>
+</body>
+</html>

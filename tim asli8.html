@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="تایم اصلی-10.css">
+<title>Untitled Document</title>
+<style>
+  body {
+    font-family: 'Vazir';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Vazir'), url('../../../Users/hafez-store/Desktop/fonts/Vazir-Regular.woff2') format('woff2'), url('../../../Users/hafez-store/Desktop/fonts/Vazir-Regular.ttf') format('truetype');
+    font-family: 'Vazir', sans-serif;
+    direction: rtl;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f7f7f7;
+    direction: rtl;
+    text-align: center;
+  }
+
+  .event-info {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #FBF7F7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 10px 20px rgba(0, 0, 0, 0.7);
+    flex: 1 0 300px;
+    margin: 20px;
+  }
+
+  .event-date {
+    font-size: 2em;
+    color: #333;
+  }
+
+  .event-time {
+    font-size: 1.5em;
+    color: #555;
+  }
+</style>
+</head>
+
+<body>
+
+	
+	
+	
+	
+	
+	<header style="background-color: #007bff; color: white; padding: 20px; text-align: center; border-radius: 10px">
+    <h1 style="font-size: 2rem; margin: 0;">
+        <a href="razme2-2.html" style="color: white; text-decoration: none;">برای دیدن تاریخ به صفحه هر شهر بروید</a>
+    </h1>
+</header>
+	<br>
+	<br>
+	<br>
+	<br>
+	<hr>
+	<br>
+	<br>
+	<div class="event-info">
+  <li>
+    طهران
+    <p>
+      فینال
+      برج میلاد سالن تختی
+    </p>
+  </li>
+  <div id="date1" class="event-date"></div>
+  <div id="time1" class="event-time"></div>
+</div>
+
+<div class="event-info">
+  <li>
+    مشهد
+    <p>
+      سالن شهید بابایی روبه رویه هتل مقدم خیابان امام رضا
+    </p>
+  </li>
+  <div id="date2" class="event-date"></div>
+  <div id="time2" class="event-time"></div>
+</div>
+
+<div class="event-info">
+  <li>بیرجند
+    <p>
+      سالن ذولفقار
+       خیابان مدرس
+    </p>
+  </li>
+  <div id="date3" class="event-date"></div>
+  <div id="time3" class="event-time"></div>
+</div>
+
+ <script>
+    function setEventDate(elementId1, elementId2, days) {
+      const eventDate = new Date();
+      eventDate.setDate(eventDate.getDate() + days);
+      eventDate.setHours(0, 0, 0);
+
+      const optionsDate = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
+      const optionsTime = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
+
+      document.getElementById(elementId1).textContent = eventDate.toLocaleDateString('fa-IR', optionsDate);
+      document.getElementById(elementId2).textContent = eventDate.toLocaleTimeString('fa-IR', optionsTime);
+    }
+
+    setEventDate('date1', 'time1', 20);
+    setEventDate('date2', 'time2', 10);
+    setEventDate('date3', 'time3', 5);
+	 </script>
+	
+	
+	<a href="razme2-2.html" style="color: white; text-decoration: none;">
+		<button> برگشت 
+</button>
+	</a>
+	
+</body>
+</html>

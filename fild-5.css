@@ -1,0 +1,143 @@
+@charset "utf-8";
+/* CSS Document */
+
+.container {
+	display: flex;
+	justify-content: space-around;
+}
+
+.movie, .series {
+	flex-basis: calc(50% - 20px);
+	margin-bottom: 20px;
+}
+
+h2 {
+	margin-top: 0;
+}
+
+video {
+	width: 100%;
+	height: auto;
+}
+
+
+button {
+ position: relative;
+ border: none;
+ background: transparent;
+ padding: 0;
+ cursor: pointer;
+ outline-offset: 4px;
+ transition: filter 250ms;
+ user-select: none;
+ touch-action: manipulation;
+}
+
+.shadow {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ border-radius: 12px;
+ background: hsl(0deg 0% 0% / 0.25);
+ will-change: transform;
+ transform: translateY(2px);
+ transition: transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+.edge {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ border-radius: 12px;
+ background: linear-gradient(
+    to left,
+    hsl(340deg 100% 16%) 0%,
+    hsl(340deg 100% 32%) 8%,
+    hsl(340deg 100% 32%) 92%,
+    hsl(340deg 100% 16%) 100%
+  );
+}
+
+.front {
+ display: block;
+ position: relative;
+ padding: 12px 27px;
+ border-radius: 12px;
+ font-size: 1.1rem;
+ color: white;
+ background: hsl(345deg 100% 47%);
+ will-change: transform;
+ transform: translateY(-4px);
+ transition: transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+button:hover {
+ filter: brightness(110%);
+}
+
+button:hover .front {
+ transform: translateY(-6px);
+ transition: transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+button:active .front {
+ transform: translateY(-2px);
+ transition: transform 34ms;
+}
+
+button:hover .shadow {
+ transform: translateY(4px);
+ transition: transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+button:active .shadow {
+ transform: translateY(1px);
+ transition: transform 34ms;
+}
+
+button:focus:not(:focus-visible) {
+ outline: none;
+}
+
+
+
+.cssbuttons-io-button {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 17px;
+  padding: 0.8em 1.5em 0.8em 1.2em;
+  color: white;
+  background: #ad5389;
+  background: linear-gradient(0deg, rgba(77,54,208,1) 0%, rgba(132,116,254,1) 100%);
+  border: none;
+  box-shadow: 0 0.7em 1.5em -0.5em #4d36d0be;
+  letter-spacing: 0.05em;
+  border-radius: 20em;
+}
+
+.cssbuttons-io-button svg {
+  margin-right: 8px;
+}
+
+.cssbuttons-io-button:hover {
+  box-shadow: 0 0.5em 1.5em -0.5em #4d36d0be;
+}
+
+.cssbuttons-io-button:active {
+  box-shadow: 0 0.3em 1em -0.5em #4d36d0be;
+}
+
